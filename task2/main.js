@@ -1,11 +1,11 @@
-// 1. Create the scene
+// Creating the scene
 const scene = new THREE.Scene();
 
-// 2. Set up the camera
+// 2.  camera set up
 const camera = new THREE.PerspectiveCamera(75,window.innerWidth / window.innerHeight,0.1,1000);
 camera.position.z = 50;
 
-// 3. Renderer setup
+// 3. Renderer using WebGL
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
@@ -24,7 +24,7 @@ const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xfdb813 }); // bright 
 const sun = new THREE.Mesh(sunGeometry, sunMaterial);
 scene.add(sun);
 
-// 6. Define planet data
+// 6. planet data
 const planets = [
   { name: 'Mercury', color: 0xb1b1b1, size: 0.5, distance: 7, speed: 0.04 },
   { name: 'Venus', color: 0xe0c16c, size: 0.9, distance: 10, speed: 0.015 },
@@ -49,13 +49,12 @@ planets.forEach((planet, index) => {
 
   scene.add(mesh);
 
-  // Create slider UI
+  //  slider UI
   const control = document.createElement("div");
   control.innerHTML = `
-    <label>${planet.name}</label>
+   <label>${planet.name}</label>
     <input type="range" min="0.0005" max="0.05" step="0.0005" value="${planet.speed}" id="slider-${index}">
-    <span id="value-${index}">${planet.speed}</span><br/>
-  `;
+    <span id="value-${index}">${planet.speed}</span><br/> `;
   controlsDiv.appendChild(control);
 
   // Real-time slider control
