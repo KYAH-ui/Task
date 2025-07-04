@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Solar System - Task 1</title>
+
+  <!-- Inline styles -->
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+    }
+
+    #ui {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      padding: 8px 14px;
+      font-size: 14px;
+      margin-right: 10px;
+      cursor: pointer;
+      border-radius: 6px;
+      border: none;
+    }
+  </style>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.153.0/build/three.min.js"></script>
+</head>
+<body>
+
+  <!-- Control Panel -->
+  <div id="ui">
+    <button id="pauseBtn">Pause</button>
+    <button id="toggleTheme">Light Mode</button>
+  </div>
+
+  <!-- Load the main script -->
+  <script src="main.js"></script>
+</body>
+</html>
